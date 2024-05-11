@@ -1,1 +1,4 @@
-# klim_2103d_docker
+# Установка
+```docker compose build```
+
+```docker compose up```
