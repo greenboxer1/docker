@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v2
 
       - name: Use Node.js 20
         uses: actions/setup-node@v2
@@ -21,8 +21,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: run eslint
+      - name: Lint
         run: npm run lint
 
-      - name: run jest tests
+      - name: Tests
         run: npm test
