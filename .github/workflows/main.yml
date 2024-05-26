@@ -12,17 +12,21 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-
       - name: Use Node.js 20
         uses: actions/setup-node@v2
         with:
           node-version: '20'
+          check-path: './actions_test'
 
       - name: Install dependencies
-        run: npm install
-
-      - name: Lint
-        run: npm run lint
-
-      - name: Tests
-        run: npm test
+        run: |
+          cd ./actions_test
+          npm install
+      - name: Run lint
+        run: |
+          cd ./actions_test
+          npm run lint
+      - name: Run tests
+        run: |
+          cd ./actions_test
+          npm run test
